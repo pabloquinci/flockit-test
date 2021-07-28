@@ -28,7 +28,7 @@ public class ProvinciaController {
 	public ResponseEntity<?> getProvincia(HttpServletRequest request, @RequestParam String nombre){
 		RestTemplate clienteRest= new RestTemplate();
 		ProvinciaResponseDTO provincias= clienteRest.getForObject("https://apis.datos.gob.ar/georef/api/provincias", ProvinciaResponseDTO.class);
-		ProvinciaDTO provinciaBuscadaDto=provincias.getProvincias().stream().filter(p->p.getNombre()==nombre).collect(Collectors.toList()).get(0);
+		ProvinciaDTO provinciaBuscadaDto=provincias.getProvincias().stream().filter(p->p.getNombre().contentEquals(nombre)).collect(Collectors.toList()).get(0);
 		return ResponseEntity.ok(provinciaBuscadaDto);
 	}
 

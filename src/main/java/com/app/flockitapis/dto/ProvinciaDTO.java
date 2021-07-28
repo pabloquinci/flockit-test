@@ -3,25 +3,16 @@ package com.app.flockitapis.dto;
 import java.math.BigDecimal;
 
 public class ProvinciaDTO {
-	private float lat;
-	private float lon;
+	private CentroideDTO centroide;
 	private Long id;
 	private String nombre;
 
-	public float getLat() {
-		return lat;
+	public CentroideDTO getCentroide() {
+		return centroide;
 	}
 
-	public void setLat(float lat) {
-		this.lat = lat;
-	}
-
-	public float getLon() {
-		return lon;
-	}
-
-	public void setLon(float lon) {
-		this.lon = lon;
+	public void setCentroide(CentroideDTO centroide) {
+		this.centroide = centroide;
 	}
 
 	public Long getId() {
