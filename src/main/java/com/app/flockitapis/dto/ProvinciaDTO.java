@@ -3,24 +3,24 @@ package com.app.flockitapis.dto;
 import java.math.BigDecimal;
 
 public class ProvinciaDTO {
-	private BigDecimal lat;
-	private BigDecimal lon;
+	private float lat;
+	private float lon;
 	private Long id;
 	private String nombre;
 
-	public BigDecimal getLat() {
+	public float getLat() {
 		return lat;
 	}
 
-	public void setLat(BigDecimal lat) {
+	public void setLat(float lat) {
 		this.lat = lat;
 	}
 
-	public BigDecimal getLon() {
+	public float getLon() {
 		return lon;
 	}
 
-	public void setLon(BigDecimal lon) {
+	public void setLon(float lon) {
 		this.lon = lon;
 	}
 
