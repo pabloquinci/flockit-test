@@ -1,4 +1,4 @@
-flockit-test - Backend de Login y Api de Provincias
+Flockit-test - Backend de Login y Api de Provincias
 
 Se definieron Las capas de Modelo, con las clases correspondientes al modelo de negocio User, Provincia y el Rol del usuario; Repository, con las implementaciones a JpaRepository para conexion a la base de datos relacional Postgres; DTO, para el manejo de request y respuestas para desacoplar del modelo de negocio, Controller, el punto de entrada a las API's REST definidas para el login y registro de usuario, y el controller para las provincias que consume la API que expone toda la info de las mismas; Modulo de Spring Security que se divide en varias etapas:
          #Configuracion: defino el tipo de encriptacion de la password, las urls que necesitaran autenticacion y aquellas que no, inyeccion de la interface que tomara los datos de del usuario que intenta loguearse (en este caso en la base de datos Postgress), el handler para usuarios no autorizados
