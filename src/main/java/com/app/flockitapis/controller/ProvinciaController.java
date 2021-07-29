@@ -7,6 +7,7 @@ import java.util.stream.Collectors;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -27,9 +28,16 @@ public class ProvinciaController {
 	@GetMapping("/getProvincia")
 	public ResponseEntity<?> getProvincia(HttpServletRequest request, @RequestParam String nombre){
 		RestTemplate clienteRest= new RestTemplate();
-		ProvinciaResponseDTO provincias= clienteRest.getForObject("https://apis.datos.gob.ar/georef/api/provincias", ProvinciaResponseDTO.class);
-		ProvinciaDTO provinciaBuscadaDto=provincias.getProvincias().stream().filter(p->p.getNombre().contentEquals(nombre)).collect(Collectors.toList()).get(0);
-		return ResponseEntity.ok(provinciaBuscadaDto);
+		try {
+			ProvinciaResponseDTO provincias= clienteRest.getForObject("https://apis.datos.gob.ar/georef/api/provincias", ProvinciaResponseDTO.class);
+			ProvinciaDTO provinciaBuscadaDto=provincias.getProvincias().stream().filter(p->p.getNombre().contentEquals(nombre)).collect(Collectors.toList()).get(0);
+			return ResponseEntity.ok(provinciaBuscadaDto);	
+		}catch(IndexOutOfBoundsException e) {
+			
+			return new ResponseEntity<String>("Provincia Inexistente",null,HttpStatus.INTERNAL_SERVER_ERROR);
+
+		}
+		
 	}
 
 }
