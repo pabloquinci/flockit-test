@@ -7,3 +7,4 @@
          #AuthTokenFilter en esta clase se ingresa al metodo doFilterInternal cada vez que se realiza un request, y valida si existe un token. Si existe obtiene el nombre de       usuario del token. Se crea un objeto de tipo Authentication que se setea en el SecurityContext
          # AuthEntryPointJwt> implementa el manejo de Excepciones de autenticacion, agregandole un log de error
          JWTUtils, contiene los metodos para encriptar y desencriptar los token
+         
