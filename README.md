@@ -15,6 +15,11 @@ Flockit-test - Backend de Login y Api de Provincias
                   #AuthTokenFilter en esta clase se ingresa al metodo doFilterInternal cada vez que se realiza un request, y valida si existe un token. Si existe obtiene el nombre
                   de usuario del token. Se crea un objeto de tipo Authentication que se setea en el SecurityContext
          
-                  # AuthEntryPointJwt> implementa el manejo de Excepciones de autenticacion, agregandole un log de erroR
+                  # AuthEntryPointJwt> implementa el manejo de Excepciones de autenticacion, agregandole un log de error
+                  
                   # JWTUtils, contiene los metodos para encriptar y desencriptar los token
          
+         #En la capa de testrealizo una inyeccion de dependencias para el repository de usuarios y creando un mock object del servicio de provincias, para luego realizar 3 test
+         
+         #La base de datos Postgres fue subida a la PaaS Heroku
+
