@@ -22,4 +22,6 @@ Flockit-test - Backend de Login y Api de Provincias
          #En la capa de testrealizo una inyeccion de dependencias para el repository de usuarios y creando un mock object del servicio de provincias, para luego realizar 3 test
          
          #La base de datos Postgres fue subida a la PaaS Heroku
+         
+         #En el directorio raiz del proyecto genera el .log correspondiente (appFlockItTest.log)
 
